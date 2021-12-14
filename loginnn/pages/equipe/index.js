@@ -1,9 +1,34 @@
 import React, {useEffect, useState} from 'react'
-import {View ,Text} from 'react-native'
+import {View ,Text, TouchableOpacity} from 'react-native'
 
 export default function Eqq ({route}){
     const {id} = route.params
-    const [equipe, setEquipe] = useState([]);
+    const [equipe, setEquipe] = useState({
+        "nomeEquipe": "",
+        "jogadores": [
+        {
+        "posicao": "top",
+        "jogador": ""
+        },
+        {
+        "posicao": "mid",
+        "jogador": ""
+        },
+        {
+        "posicao": "jg",
+        "jogador": ""
+        },
+        {
+        "posicao": "adc",
+        "jogador": ""
+        },
+        {
+        "posicao": "sup",
+        "jogador": ""
+        }
+        ],
+        "nomeCoach": ""
+        });
 
     
 
