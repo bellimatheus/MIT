@@ -13,7 +13,7 @@ function App() {
     return (
       <NavigationContainer>
                             {/* exclui o cabeçalho */}
-        <Stack.Navigator screenOptions={{headerShown: false}}> 
+        <Stack.Navigator screenOptions={{headerShown: true}}> 
           <Stack.Screen name="Tela de login" component={Login}/>
           <Stack.Screen name="Home" component={Home}/>
           <Stack.Screen name="Equipe" component={Equipe}/>
