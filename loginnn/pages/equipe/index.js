@@ -48,7 +48,7 @@ export default function Eqq ({route}){
                 {
                     equipe.jogadores.map((e, index) => {
                         return (
-                            <TouchableOpacity>
+                            <TouchableOpacity key={index}>
                                 <Text>{e.jogador}</Text>
                                 <Text>{e.posicao}</Text>
                             </TouchableOpacity>
