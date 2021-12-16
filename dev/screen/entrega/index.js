@@ -1,20 +1,26 @@
 
 import React, {useEffect, useState} from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text, Button} from 'react-native'
 
 
 export default function ped ({route}){
-    const {id_pedido} = route.params
-    const [array, setArray] = useState([]);
-    const ex = () => {
+    function entregue (){
+        const {id_pedido} = route.params
+    
         let url = "http://10.87.207.2:3000/entregas/entregues/" + id_pedido;
         fetch(url, {
             method: 'PUT',
+         })
+        .then((res) => {
+            if(resp.status == 200) {
+                return resp.json();
+            }
         })
-        .then((res) => {res.json()})
-        .then((data) => {setArray(data)} )
-        
-    } 
+        .then((data) => {console.log(data)} )
+        .catch (err => {console.log(err)})
+
+        }
+    }
 console.log(array)
     
     useEffect(ex, [])
@@ -31,6 +37,7 @@ console.log(array)
                             <Text style={style.coisa}>{e.endereco}</Text>
                             <Text style={style.coisa}>{e.produto}</Text>
                             <Text style={style.coisa}>{e.valor}</Text>
+                            <Button onPress={() => {entregue()}></Button>
 
                         </TouchableOpacity>
                     )
