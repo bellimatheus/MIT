@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import { View, TouchableOpacity, Text, Button} from 'react-native'
 
-
+ 
 export default function ped ({route}){
     function entregue (){
         const {id_pedido} = route.params
